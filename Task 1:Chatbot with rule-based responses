@@ -1,0 +1,26 @@
+def chatbot_response(user_input):
+    user_input = user_input.lower()
+
+    if user_input in ["hello","hl","hey"]:
+        return "Hello! How can i assist you today?"
+    elif "who are you" in user_input or "what are you" in user_input:
+        return "I am a simple chatbot."
+    elif "weather" in user_input:
+        return "check your local weather app for updates."
+    elif "time" in user_input:
+        return "check the clock on your device."
+    elif "help" in user_input:
+        return "sure!what do you need help with?"
+    else:
+        return "I'm not sure how to respond to that."
+    
+def chat():
+    print("chatbot:Hi! I'm your assistant.Type 'exit' to end the chat.")   
+    while True:
+        user_input=input("You:")
+        if user_input.lower()=="exit":
+            print("chatbot:goodbye")
+            break
+        print("chatbot:",chatbot_response(user_input))
+
+chat()        
